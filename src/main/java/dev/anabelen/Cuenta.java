@@ -5,7 +5,7 @@ public class Cuenta {
     private int numConsig;
     private int numRetiros;
     private float tasaAnual;
-    private float comisionMensual;
+    public float comisionMensual;
 
     public Cuenta(float saldoIncial, float tasaAnual) {
         this.saldo = saldoIncial;
@@ -27,7 +27,7 @@ public class Cuenta {
     }
 
     public void retirar(float cantidad) {
-        if (cantidad > 0 && saldo >= saldo) {
+        if (cantidad > 0 && saldo <= saldo) {
             saldo -= cantidad;
             numRetiros++;
         }
@@ -42,8 +42,10 @@ public class Cuenta {
         saldo += interes;
     }
 
-
-
-
-
+    public void extractoMensual () {
+        saldo = saldo -= comisionMensual;
+        calcularInteresMensual();
+        numConsig = 0;
+        numRetiros = 0;
+    }
 }

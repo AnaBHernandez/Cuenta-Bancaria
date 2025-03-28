@@ -31,9 +31,9 @@ public class CuentaTest {
     public void testExtractoMensual() {
         Cuenta cuenta = new Cuenta(2000f, 12F);
         cuenta.comisionMensual = 50f;
-        cuenta.testExtractoMensual();
-
-
+        cuenta.extractoMensual();
+        assertEquals(1969.5f, cuenta.getSaldo(), 0.01f);
     }
+
 
 }
