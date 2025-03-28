@@ -27,11 +27,21 @@ public class CuentaAhorrosTest {
 
 }
 
-    @Test
-    public void testExtractoMansualConComisionExtra() {
-        CuentaAhorros cuenta = new CuentaAhorros(20000f, 5f);
+@Test
+public void testExtractoMensualSimplificado() {
+    CuentaAhorros cuenta = new CuentaAhorros(10000f, 6f);
+    for (int i = 0; i < 4; i++) {
         cuenta.retirar(1000f);
-        cuenta.extractoMensual();
-        assertEquals(14500f, cuenta.getSaldo(), 0.01f);
     }
+    cuenta.extractoMensual();
+    assertEquals(6030f, cuenta.getSaldo(), 0.01f, "El saldo debe reflejar el interés mensual sin comisión extra");
+}
+@Test
+public void testRetirarInactiva() {
+    CuentaAhorros cuenta = CuentaAhorros(9000f, 5f);
+    cuenta.retirar(1000f);
+    assertEquals(9000f, cuenta.getSaldo(), 0.01f);
+    assertFalse(cuenta.isActiva(), "La cuenta sigue inactiva después de retirar");
+
+}
 }

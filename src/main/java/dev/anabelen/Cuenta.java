@@ -1,9 +1,9 @@
 package dev.anabelen;
 
 public class Cuenta {
-    private float saldo;
-    private int numConsig;
-    private int numRetiros;
+    protected float saldo;
+    protected int numConsig;
+    protected int numRetiros;
     private float tasaAnual;
     public float comisionMensual;
 
@@ -38,7 +38,7 @@ public class Cuenta {
     }
 
     public void calcularInteresMensual() {
-        float interes = saldo * tasaAnual / 1200;
+        float interes = (saldo * tasaAnual) / 1200f;
         saldo += interes;
     }
 
@@ -55,6 +55,14 @@ public class Cuenta {
             ", Retiros: " + numRetiros +
             ", Tasa anual: " + tasaAnual +
             ", Comisión por manejo de cuenta: " + comisionMensual;
+    }
+
+    public int getNumConsig() {
+        return numConsig;
+    }
+
+    public int getNumRetiros() {
+        return numRetiros;
     }
 
 
