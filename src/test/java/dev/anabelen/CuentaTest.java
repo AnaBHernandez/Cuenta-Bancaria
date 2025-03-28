@@ -20,4 +20,11 @@ public class CuentaTest {
         assertEquals(1, cuenta.getNumeroRetiros());
     }
 
+    @Test
+    public void testCalcularInteresMensual() {
+        Cuenta cuenta = new Cuenta(1200f, 12F);
+        cuenta.testCalcularInteresMensual();
+        assertEquals(1212f, cuenta.getSaldo(), 0.01f);
+    }
+
 }
