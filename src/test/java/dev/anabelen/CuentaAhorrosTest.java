@@ -18,4 +18,11 @@ public class CuentaAhorrosTest {
         assertTrue(cuenta.isActiva(), "La cuenta sigue activa después de consignar");
     }
 
+    @Test
+    public void testConsignarInactiva() {
+        CuentaAhorros cuenta = new CuentaAhorros(9000, 5f);
+        cuenta.consignar(1000f);
+        assertEquals(9000f, cuenta.getSaldo(), 0.01f);
+        assertFalse(cuenta.isActiva(), "La cuenta está inactiva después de consignar");
+
 }
