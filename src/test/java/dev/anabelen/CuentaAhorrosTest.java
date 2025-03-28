@@ -38,10 +38,11 @@ public void testExtractoMensualSimplificado() {
 }
 @Test
 public void testRetirarInactiva() {
-    CuentaAhorros cuenta = CuentaAhorros(9000f, 5f);
+    CuentaAhorros cuenta = new CuentaAhorros(9000f, 5f);
     cuenta.retirar(1000f);
     assertEquals(9000f, cuenta.getSaldo(), 0.01f);
     assertFalse(cuenta.isActiva(), "La cuenta sigue inactiva después de retirar");
 
 }
+
 }

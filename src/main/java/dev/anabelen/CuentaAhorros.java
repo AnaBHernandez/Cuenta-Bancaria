@@ -22,33 +22,30 @@ public class CuentaAhorros extends Cuenta {
     }
 
     @Override
-public void extractoMensual() {
-    // Calcular retiros extra (más allá de los primeros 4)
+    public void extractoMensual() {
     int retirosExtra = Math.max(0, getNumeroRetiros() - 4);
-    float comisionExtra = retirosExtra * 1000f; // Comisión extra por cada retiro adicional
+    float comisionExtra = retirosExtra * 1000f;
     System.out.println("Retiros extra: " + retirosExtra);
     System.out.println("Comisión extra: " + comisionExtra);
-
-    // Agregar la comisión extra a la comisión mensual
     comisionMensual += comisionExtra;
     System.out.println("Comisión total: " + comisionMensual);
-
-    // Restar la comisión total del saldo
     saldo -= comisionMensual;
     System.out.println("Saldo después de comisiones: " + saldo);
-
-    // Calcular el interés mensual sobre el saldo restante
     calcularInteresMensual();
     System.out.println("Saldo después del interés mensual: " + saldo);
-
-    // Reiniciar los contadores de retiros y consignaciones
     this.numConsig = 0;
     this.numRetiros = 0;
-
-    // Reevaluar si la cuenta sigue activa
     activa = (saldo >= 10000f);
     System.out.println("Estado de la cuenta (activa): " + activa);
 }
+
+    @Override
+    public void retirar(float cantidad) {
+        if(activa) {
+            super.retirar(cantidad);
+            activa = (getSaldo() >= 10000f);
+        }
+    }
 
 }
 
