@@ -46,6 +46,5 @@ public class CuentaAhorros extends Cuenta {
            "Comisión: " + comisionMensual + "\n" +
            "Transacciones totales: " + (this.numConsig + this.numRetiros);
 }
-
 }
 
