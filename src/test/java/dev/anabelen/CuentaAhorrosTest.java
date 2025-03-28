@@ -44,5 +44,14 @@ public void testRetirarInactiva() {
     assertFalse(cuenta.isActiva(), "La cuenta sigue inactiva después de retirar");
 
 }
-
+@Test
+public void testImprimir() {
+    CuentaAhorros cuenta = new CuentaAhorros(12000f, 5f);
+    String estado = cuenta.imprimir();
+    assertTrue(estado.contains("Saldo:"), "El mensaje debe incluir el saldo");
+    assertTrue(estado.contains("Comisión:"), "El mensaje debe incluir la comisión");
+    assertTrue(estado.contains("Transacciones totales:"), "El mensaje debe incluir las transacciones totales");
 }
+}
+
+

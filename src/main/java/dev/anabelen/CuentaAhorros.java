@@ -23,21 +23,14 @@ public class CuentaAhorros extends Cuenta {
 
     @Override
     public void extractoMensual() {
-    int retirosExtra = Math.max(0, getNumeroRetiros() - 4);
-    float comisionExtra = retirosExtra * 1000f;
-    System.out.println("Retiros extra: " + retirosExtra);
-    System.out.println("Comisión extra: " + comisionExtra);
-    comisionMensual += comisionExtra;
-    System.out.println("Comisión total: " + comisionMensual);
-    saldo -= comisionMensual;
-    System.out.println("Saldo después de comisiones: " + saldo);
-    calcularInteresMensual();
-    System.out.println("Saldo después del interés mensual: " + saldo);
-    this.numConsig = 0;
-    this.numRetiros = 0;
-    activa = (saldo >= 10000f);
-    System.out.println("Estado de la cuenta (activa): " + activa);
-}
+        int retirosExtra = Math.max(0, getNumeroRetiros() - 4);
+        float comisionExtra = retirosExtra * 1000f;
+        comisionMensual += comisionExtra;
+        saldo -= comisionMensual;
+        calcularInteresMensual();
+        this.numRetiros = 0;
+        activa = (saldo >= 10000f);
+    }
 
     @Override
     public void retirar(float cantidad) {
@@ -46,6 +39,13 @@ public class CuentaAhorros extends Cuenta {
             activa = (getSaldo() >= 10000f);
         }
     }
+
+    @Override
+    public String imprimir() {
+    return "Saldo: " + saldo + "\n" +
+           "Comisión: " + comisionMensual + "\n" +
+           "Transacciones totales: " + (this.numConsig + this.numRetiros);
+}
 
 }
 
