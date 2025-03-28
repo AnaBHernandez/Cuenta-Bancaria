@@ -39,11 +39,11 @@ public class CuentaTest {
     public void testImprimir() {
         Cuenta cuenta = new Cuenta(2000f, 12f);
         String estado = cuenta.imprimir();
-        assertTrue(estado.contains("Saldo"));
-        assertTrue(estado.contains("Número de consignaciones"));
-        assertTrue(estado.contains("Número de retiros"));
-        assertTrue(estado.contains("Tasa anual"));
-        assertTrue(estado.contains("Comisión por manejo de cuenta"));
+        assertTrue(estado.contains("Saldo:"));
+        assertTrue(estado.contains("Consignaciones:"));
+        assertTrue(estado.contains("Retiros:"));
+        assertTrue(estado.contains("Tasa anual:"));
+        assertTrue(estado.contains("Comisión por manejo de cuenta:"));
     }
 
 

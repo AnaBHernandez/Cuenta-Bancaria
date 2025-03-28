@@ -49,5 +49,13 @@ public class Cuenta {
         numRetiros = 0;
     }
 
+    public String imprimir() {
+        return "Saldo: " + saldo +
+            ", Consignaciones: " + numConsig +
+            ", Retiros: " + numRetiros +
+            ", Tasa anual: " + tasaAnual +
+            ", Comisión por manejo de cuenta: " + comisionMensual;
+    }
+
 
 }
