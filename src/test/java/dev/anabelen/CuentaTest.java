@@ -45,6 +45,4 @@ public class CuentaTest {
         assertTrue(estado.contains("Tasa anual:"));
         assertTrue(estado.contains("Comisión por manejo de cuenta:"));
     }
-
-
 }

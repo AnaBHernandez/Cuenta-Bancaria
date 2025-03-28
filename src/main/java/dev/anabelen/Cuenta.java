@@ -64,6 +64,4 @@ public class Cuenta {
     public int getNumRetiros() {
         return numRetiros;
     }
-
-
 }

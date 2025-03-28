@@ -2,7 +2,6 @@ package dev.anabelen;
 
 public class CuentaAhorros extends Cuenta {
     boolean activa;
-
     public CuentaAhorros(float saldoInicial, float tasaAnual) {
         super(saldoInicial, tasaAnual);
         this.activa = (saldoInicial >= 10000f);
@@ -14,11 +13,10 @@ public class CuentaAhorros extends Cuenta {
 
     @Override
     public void consignar(float cantidad) {
-      if(activa) {
+    if(activa) {
         super.consignar(cantidad);
         activa = (getSaldo() >= 10000f);
-      }
-
+    }
     }
 
     @Override
@@ -28,7 +26,8 @@ public class CuentaAhorros extends Cuenta {
         comisionMensual += comisionExtra;
         saldo -= comisionMensual;
         calcularInteresMensual();
-        this.numRetiros = 0;
+        numConsig = 0;
+        numRetiros = 0;
         activa = (saldo >= 10000f);
     }
 
@@ -43,8 +42,7 @@ public class CuentaAhorros extends Cuenta {
     @Override
     public String imprimir() {
     return "Saldo: " + saldo + "\n" +
-           "Comisión: " + comisionMensual + "\n" +
-           "Transacciones totales: " + (this.numConsig + this.numRetiros);
+    "Comisión: " + comisionMensual + "\n" +
+    "Transacciones totales: " + (this.numConsig + this.numRetiros);
 }
 }
-

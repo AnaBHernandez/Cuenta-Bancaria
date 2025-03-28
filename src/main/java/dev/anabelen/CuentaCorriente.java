@@ -16,7 +16,6 @@ public class CuentaCorriente extends Cuenta {
             float sobregiroNuevo = cantidad - saldo;
             saldo = 0;
             sobregiro += sobregiroNuevo;
-
         }
     }
 
@@ -38,4 +37,3 @@ public class CuentaCorriente extends Cuenta {
         saldo += cantidad;
         }
     }
-
