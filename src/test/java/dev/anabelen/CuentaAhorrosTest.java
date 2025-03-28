@@ -10,4 +10,12 @@ public class CuentaAhorrosTest {
         assertTrue(cuenta.isActiva(), "La cuenta debe estar activa cuando el saldo es >= 10,000");
     }
 
+    @Test
+    public void testConsignarActiva() {
+        CuentaAhorros cuenta = new CuentaAhorros(11000f, 5f);
+        cuenta.consignar(1000f);
+        assertEquals(12000f, cuenta.getSaldo(), 0.01f);
+        assertTrue(cuenta.isActiva(), "La cuenta sigue activa después de consignar");
+    }
+
 }
