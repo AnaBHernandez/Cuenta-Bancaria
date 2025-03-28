@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-public class CuentaCorrientesTest {
+public class CuentaCorrienteTest {
     @Test
     public void testRetirarConSobregiro() {
         CuentaCorriente cuenta = new CuentaCorriente(1000f, 5f);
