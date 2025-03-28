@@ -12,4 +12,12 @@ public class CuentaAhorros extends Cuenta {
         return activa;
     }
 
+    @Override
+    public void consignar(float cantidad) {
+      if(activa) {
+        super.consignar(cantidad);
+        activa = (getSaldo() >= 10000f);
+      }
+
+}
 }

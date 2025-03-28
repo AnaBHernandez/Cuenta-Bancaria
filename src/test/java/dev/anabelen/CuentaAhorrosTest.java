@@ -26,3 +26,4 @@ public class CuentaAhorrosTest {
         assertFalse(cuenta.isActiva(), "La cuenta está inactiva después de consignar");
 
 }
+}
