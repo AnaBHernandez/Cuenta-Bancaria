@@ -37,6 +37,13 @@ public class Cuenta {
         return numRetiros;
     }
 
+    public void calcularInteresMensual() {
+        float interes = saldo * tasaAnual / 1200;
+        saldo += interes;
+    }
+
+
+
 
 
 }

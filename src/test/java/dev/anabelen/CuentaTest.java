@@ -23,7 +23,7 @@ public class CuentaTest {
     @Test
     public void testCalcularInteresMensual() {
         Cuenta cuenta = new Cuenta(1200f, 12F);
-        cuenta.testCalcularInteresMensual();
+        cuenta.calcularInteresMensual();
         assertEquals(1212f, cuenta.getSaldo(), 0.01f);
     }
 
