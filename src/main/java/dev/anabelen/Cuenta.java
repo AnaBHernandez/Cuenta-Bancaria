@@ -26,4 +26,17 @@ public class Cuenta {
         return saldo;
     }
 
+    public void retirar(float cantidad) {
+        if (cantidad > 0 && saldo >= saldo) {
+            saldo -= cantidad;
+            numRetiros++;
+        }
+    }
+
+    public int getNumeroRetiros() {
+        return numRetiros;
+    }
+
+
+
 }
