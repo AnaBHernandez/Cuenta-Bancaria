@@ -1,4 +1,19 @@
-/target/
+# Evitar subir archivos compilados
 *.class
+
+# Carpetas generadas automáticamente (Maven, compilación, etc.)
+/target/
+/bin/
+/out/
+
+# Configuraciones del IDE: Visual Studio Code, IntelliJ, Eclipse, etc.
 .vscode/
+.idea/
+*.iml
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Logs y otros
 *.log
