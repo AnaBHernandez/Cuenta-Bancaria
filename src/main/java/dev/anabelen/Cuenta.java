@@ -1,0 +1,29 @@
+package dev.anabelen;
+
+public class Cuenta {
+    private float saldo;
+    private int numConsig;
+    private int numRetiros;
+    private float tasaAnual;
+    private float comisionMensual;
+
+    public Cuenta(float saldoIncial, float tasaAnual) {
+        this.saldo = saldoIncial;
+        this.tasaAnual = tasaAnual;
+        this.numConsig = 0;
+        this.numRetiros = 0;
+        this.comisionMensual = 0;
+    }
+
+    public void consignar(float cantidad) {
+        if (cantidad > 0) {
+            saldo += cantidad;
+            numConsig++;
+        }
+    }
+
+    public float getSaldo() {
+        return saldo;
+    }
+
+}
