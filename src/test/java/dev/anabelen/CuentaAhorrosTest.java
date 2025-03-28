@@ -26,4 +26,12 @@ public class CuentaAhorrosTest {
         assertFalse(cuenta.isActiva(), "La cuenta está inactiva después de consignar");
 
 }
+
+    @Test
+    public void testExtractoMansualConComisionExtra() {
+        CuentaAhorros cuenta = new CuentaAhorros(20000f, 5f);
+        cuenta.retirar(1000f);
+        cuenta.extractoMensual();
+        assertEquals(14500f, cuenta.getSaldo(), 0.01f);
+    }
 }
